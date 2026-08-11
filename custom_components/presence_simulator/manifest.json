@@ -1,0 +1,10 @@
+{
+  "domain": "presence_simulator",
+  "name": "Presence Simulator",
+  "version": "0.1.0",
+  "config_flow": true,
+  "iot_class": "calculated",
+  "documentation": "https://github.com/GEPEGE/presence_simulator",
+  "issue_tracker": "https://github.com/GEPEGE/presence_simulator/issues",
+  "codeowners": []
+}
