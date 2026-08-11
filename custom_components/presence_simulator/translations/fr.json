@@ -1,0 +1,92 @@
+{
+  "title": "Presence Simulator",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Presence Simulator",
+        "description": "Configurez les lumières utilisées pour la simulation de présence.",
+        "data": {
+          "name": "Nom",
+          "lights": "Lumières"
+        },
+        "data_description": {
+          "lights": "Sélectionnez les lumières que le simulateur pourra contrôler."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Presence Simulator est déjà configuré."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Fenêtre d’activité",
+        "description": "Choisissez comment Presence Simulator détermine quand l’activité est autorisée.",
+        "data": {
+          "activity_window_mode": "Mode de fenêtre d’activité"
+        }
+      },
+      "fixed": {
+        "title": "Plage horaire fixe",
+        "description": "Configurez la plage horaire quotidienne pendant laquelle la simulation de présence peut fonctionner.",
+        "data": {
+          "fixed_start_time": "Heure de début",
+          "fixed_end_time": "Heure de fin",
+          "fixed_weekdays": "Jours actifs"
+        },
+        "data_description": {
+          "fixed_start_time": "Heure à laquelle l’activité simulée peut commencer.",
+          "fixed_end_time": "Heure à laquelle l’activité simulée doit s’arrêter. Les plages passant par minuit sont prises en charge.",
+          "fixed_weekdays": "Sélectionnez les jours où cette fenêtre d’activité est activée."
+        }
+      },
+      "sun": {
+        "title": "Fenêtre basée sur le soleil",
+        "description": "Configurez la fenêtre d’activité par rapport au lever ou au coucher du soleil.",
+        "data": {
+          "sun_start_event": "Événement de début",
+          "sun_start_offset_minutes": "Décalage de début",
+          "sun_end_event": "Événement de fin",
+          "sun_end_offset_minutes": "Décalage de fin"
+        },
+        "data_description": {
+          "sun_start_event": "Choisissez le lever ou le coucher du soleil comme référence de début.",
+          "sun_start_offset_minutes": "Décalage en minutes. Les valeurs négatives commencent avant l’événement sélectionné.",
+          "sun_end_event": "Choisissez le lever ou le coucher du soleil comme référence de fin.",
+          "sun_end_offset_minutes": "Décalage en minutes. Les valeurs positives se terminent après l’événement sélectionné."
+        }
+      },
+      "activity": {
+        "title": "Comportement de la simulation",
+        "description": "Configurez les lumières et les durées d’activité aléatoires.",
+        "data": {
+          "lights": "Lumières",
+          "min_initial_delay_minutes": "Délai initial minimum",
+          "max_initial_delay_minutes": "Délai initial maximum",
+          "min_on_minutes": "Durée ON minimale",
+          "max_on_minutes": "Durée ON maximale",
+          "min_off_minutes": "Durée OFF minimale",
+          "max_off_minutes": "Durée OFF maximale",
+          "max_simultaneous": "Nombre maximal de lumières simultanées"
+        },
+        "data_description": {
+          "lights": "Sélectionnez les lumières que Presence Simulator pourra contrôler.",
+          "min_initial_delay_minutes": "Délai minimum avant la première activité possible de chaque lumière à l’ouverture de la fenêtre.",
+          "max_initial_delay_minutes": "Délai maximum avant la première activité possible de chaque lumière à l’ouverture de la fenêtre.",
+          "min_on_minutes": "Durée minimale pendant laquelle une lumière simulée reste allumée.",
+          "max_on_minutes": "Durée maximale pendant laquelle une lumière simulée reste allumée.",
+          "min_off_minutes": "Temps d’attente minimum avant que cette lumière puisse redevenir active.",
+          "max_off_minutes": "Temps d’attente maximum avant que cette lumière puisse redevenir active.",
+          "max_simultaneous": "Nombre maximal de lumières simulées pouvant être allumées simultanément."
+        }
+      }
+    },
+    "error": {
+      "min_on_greater_than_max": "La durée ON minimale ne peut pas être supérieure à la durée ON maximale.",
+      "min_off_greater_than_max": "La durée OFF minimale ne peut pas être supérieure à la durée OFF maximale.",
+      "min_initial_delay_greater_than_max": "Le délai initial minimum ne peut pas être supérieur au délai initial maximum.",
+      "no_weekdays_selected": "Sélectionnez au moins un jour de la semaine."
+    }
+  }
+}

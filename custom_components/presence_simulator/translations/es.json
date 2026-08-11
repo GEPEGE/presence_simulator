@@ -1,0 +1,92 @@
+{
+  "title": "Presence Simulator",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Presence Simulator",
+        "description": "Configura las luces utilizadas para la simulación de presencia.",
+        "data": {
+          "name": "Nombre",
+          "lights": "Luces"
+        },
+        "data_description": {
+          "lights": "Selecciona las luces que podrá controlar el simulador."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Presence Simulator ya está configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ventana de actividad",
+        "description": "Elige cómo determina Presence Simulator cuándo se permite la actividad.",
+        "data": {
+          "activity_window_mode": "Modo de ventana de actividad"
+        }
+      },
+      "fixed": {
+        "title": "Ventana horaria fija",
+        "description": "Configura la franja horaria diaria en la que puede ejecutarse la simulación de presencia.",
+        "data": {
+          "fixed_start_time": "Hora de inicio",
+          "fixed_end_time": "Hora de fin",
+          "fixed_weekdays": "Días activos"
+        },
+        "data_description": {
+          "fixed_start_time": "Hora a partir de la cual puede comenzar la actividad simulada.",
+          "fixed_end_time": "Hora a la que debe detenerse la actividad simulada. Se admiten intervalos que atraviesan la medianoche.",
+          "fixed_weekdays": "Selecciona los días en los que esta ventana de actividad está habilitada."
+        }
+      },
+      "sun": {
+        "title": "Ventana basada en el sol",
+        "description": "Configura la ventana de actividad con respecto al amanecer o al atardecer.",
+        "data": {
+          "sun_start_event": "Evento de inicio",
+          "sun_start_offset_minutes": "Desfase de inicio",
+          "sun_end_event": "Evento de fin",
+          "sun_end_offset_minutes": "Desfase de fin"
+        },
+        "data_description": {
+          "sun_start_event": "Elige el amanecer o el atardecer como referencia de inicio.",
+          "sun_start_offset_minutes": "Desfase en minutos. Los valores negativos comienzan antes del evento seleccionado.",
+          "sun_end_event": "Elige el amanecer o el atardecer como referencia de fin.",
+          "sun_end_offset_minutes": "Desfase en minutos. Los valores positivos terminan después del evento seleccionado."
+        }
+      },
+      "activity": {
+        "title": "Comportamiento de la simulación",
+        "description": "Configura las luces y los tiempos aleatorios de actividad.",
+        "data": {
+          "lights": "Luces",
+          "min_initial_delay_minutes": "Retardo inicial mínimo",
+          "max_initial_delay_minutes": "Retardo inicial máximo",
+          "min_on_minutes": "Tiempo mínimo encendida",
+          "max_on_minutes": "Tiempo máximo encendida",
+          "min_off_minutes": "Tiempo mínimo apagada",
+          "max_off_minutes": "Tiempo máximo apagada",
+          "max_simultaneous": "Máximo de luces simultáneas"
+        },
+        "data_description": {
+          "lights": "Selecciona las luces que podrá controlar Presence Simulator.",
+          "min_initial_delay_minutes": "Retardo mínimo antes de la primera posible actividad de cada luz al abrirse la ventana.",
+          "max_initial_delay_minutes": "Retardo máximo antes de la primera posible actividad de cada luz al abrirse la ventana.",
+          "min_on_minutes": "Tiempo mínimo que una luz simulada permanece encendida.",
+          "max_on_minutes": "Tiempo máximo que una luz simulada permanece encendida.",
+          "min_off_minutes": "Tiempo mínimo de espera antes de que esa luz pueda volver a activarse.",
+          "max_off_minutes": "Tiempo máximo de espera antes de que esa luz pueda volver a activarse.",
+          "max_simultaneous": "Número máximo de luces simuladas que pueden estar encendidas al mismo tiempo."
+        }
+      }
+    },
+    "error": {
+      "min_on_greater_than_max": "El tiempo mínimo encendida no puede ser mayor que el máximo.",
+      "min_off_greater_than_max": "El tiempo mínimo apagada no puede ser mayor que el máximo.",
+      "min_initial_delay_greater_than_max": "El retardo inicial mínimo no puede ser mayor que el máximo.",
+      "no_weekdays_selected": "Selecciona al menos un día de la semana."
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "title": "Presence Simulator",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Presence Simulator",
+        "description": "Konfiguriere die Lichter für die Anwesenheitssimulation.",
+        "data": {
+          "name": "Name",
+          "lights": "Lichter"
+        },
+        "data_description": {
+          "lights": "Wähle die Lichter aus, die der Simulator steuern darf."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Presence Simulator ist bereits konfiguriert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Aktivitätszeitraum",
+        "description": "Wähle aus, wie Presence Simulator bestimmt, wann Aktivität erlaubt ist.",
+        "data": {
+          "activity_window_mode": "Modus des Aktivitätszeitraums"
+        }
+      },
+      "fixed": {
+        "title": "Fester Zeitraum",
+        "description": "Konfiguriere den täglichen Zeitraum, in dem die Anwesenheitssimulation laufen darf.",
+        "data": {
+          "fixed_start_time": "Startzeit",
+          "fixed_end_time": "Endzeit",
+          "fixed_weekdays": "Aktive Wochentage"
+        },
+        "data_description": {
+          "fixed_start_time": "Zeitpunkt, ab dem simulierte Aktivität beginnen darf.",
+          "fixed_end_time": "Zeitpunkt, zu dem simulierte Aktivität enden muss. Zeiträume über Mitternacht werden unterstützt.",
+          "fixed_weekdays": "Wähle die Tage aus, an denen dieser Aktivitätszeitraum aktiviert ist."
+        }
+      },
+      "sun": {
+        "title": "Sonnenbasierter Zeitraum",
+        "description": "Konfiguriere den Aktivitätszeitraum relativ zu Sonnenaufgang oder Sonnenuntergang.",
+        "data": {
+          "sun_start_event": "Startereignis",
+          "sun_start_offset_minutes": "Startversatz",
+          "sun_end_event": "Endereignis",
+          "sun_end_offset_minutes": "Endversatz"
+        },
+        "data_description": {
+          "sun_start_event": "Wähle Sonnenaufgang oder Sonnenuntergang als Startreferenz.",
+          "sun_start_offset_minutes": "Versatz in Minuten. Negative Werte beginnen vor dem ausgewählten Ereignis.",
+          "sun_end_event": "Wähle Sonnenaufgang oder Sonnenuntergang als Endreferenz.",
+          "sun_end_offset_minutes": "Versatz in Minuten. Positive Werte enden nach dem ausgewählten Ereignis."
+        }
+      },
+      "activity": {
+        "title": "Simulationsverhalten",
+        "description": "Konfiguriere die Lichter und zufälligen Aktivitätszeiten.",
+        "data": {
+          "lights": "Lichter",
+          "min_initial_delay_minutes": "Minimale Anfangsverzögerung",
+          "max_initial_delay_minutes": "Maximale Anfangsverzögerung",
+          "min_on_minutes": "Minimale EIN-Zeit",
+          "max_on_minutes": "Maximale EIN-Zeit",
+          "min_off_minutes": "Minimale AUS-Zeit",
+          "max_off_minutes": "Maximale AUS-Zeit",
+          "max_simultaneous": "Maximal gleichzeitig aktive Lichter"
+        },
+        "data_description": {
+          "lights": "Wähle die Lichter aus, die Presence Simulator steuern darf.",
+          "min_initial_delay_minutes": "Minimale Verzögerung bis zur ersten möglichen Aktivität jedes Lichts nach Öffnen des Zeitraums.",
+          "max_initial_delay_minutes": "Maximale Verzögerung bis zur ersten möglichen Aktivität jedes Lichts nach Öffnen des Zeitraums.",
+          "min_on_minutes": "Minimale Zeit, die ein simuliertes Licht eingeschaltet bleibt.",
+          "max_on_minutes": "Maximale Zeit, die ein simuliertes Licht eingeschaltet bleibt.",
+          "min_off_minutes": "Minimale Wartezeit, bevor dieses Licht wieder aktiv werden kann.",
+          "max_off_minutes": "Maximale Wartezeit, bevor dieses Licht wieder aktiv werden kann.",
+          "max_simultaneous": "Maximale Anzahl simulierter Lichter, die gleichzeitig eingeschaltet sein dürfen."
+        }
+      }
+    },
+    "error": {
+      "min_on_greater_than_max": "Die minimale EIN-Zeit darf nicht größer als die maximale EIN-Zeit sein.",
+      "min_off_greater_than_max": "Die minimale AUS-Zeit darf nicht größer als die maximale AUS-Zeit sein.",
+      "min_initial_delay_greater_than_max": "Die minimale Anfangsverzögerung darf nicht größer als die maximale sein.",
+      "no_weekdays_selected": "Wähle mindestens einen Wochentag aus."
+    }
+  }
+}

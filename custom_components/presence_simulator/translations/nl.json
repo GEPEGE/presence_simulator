@@ -1,0 +1,92 @@
+{
+  "title": "Presence Simulator",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Presence Simulator",
+        "description": "Configureer de lampen die voor de aanwezigheidssimulatie worden gebruikt.",
+        "data": {
+          "name": "Naam",
+          "lights": "Lampen"
+        },
+        "data_description": {
+          "lights": "Selecteer de lampen die de simulator mag bedienen."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Presence Simulator is al geconfigureerd."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Activiteitsvenster",
+        "description": "Kies hoe Presence Simulator bepaalt wanneer activiteit is toegestaan.",
+        "data": {
+          "activity_window_mode": "Modus activiteitsvenster"
+        }
+      },
+      "fixed": {
+        "title": "Vast tijdvenster",
+        "description": "Configureer het dagelijkse tijdvenster waarin de aanwezigheidssimulatie mag werken.",
+        "data": {
+          "fixed_start_time": "Starttijd",
+          "fixed_end_time": "Eindtijd",
+          "fixed_weekdays": "Actieve weekdagen"
+        },
+        "data_description": {
+          "fixed_start_time": "Tijdstip waarop gesimuleerde activiteit mag beginnen.",
+          "fixed_end_time": "Tijdstip waarop gesimuleerde activiteit moet stoppen. Tijdvensters over middernacht worden ondersteund.",
+          "fixed_weekdays": "Selecteer de dagen waarop dit activiteitsvenster is ingeschakeld."
+        }
+      },
+      "sun": {
+        "title": "Venster op basis van de zon",
+        "description": "Configureer het activiteitsvenster ten opzichte van zonsopgang of zonsondergang.",
+        "data": {
+          "sun_start_event": "Startgebeurtenis",
+          "sun_start_offset_minutes": "Startverschuiving",
+          "sun_end_event": "Eindgebeurtenis",
+          "sun_end_offset_minutes": "Eindverschuiving"
+        },
+        "data_description": {
+          "sun_start_event": "Kies zonsopgang of zonsondergang als startreferentie.",
+          "sun_start_offset_minutes": "Verschuiving in minuten. Negatieve waarden beginnen vóór de geselecteerde gebeurtenis.",
+          "sun_end_event": "Kies zonsopgang of zonsondergang als eindreferentie.",
+          "sun_end_offset_minutes": "Verschuiving in minuten. Positieve waarden eindigen na de geselecteerde gebeurtenis."
+        }
+      },
+      "activity": {
+        "title": "Simulatiegedrag",
+        "description": "Configureer de lampen en willekeurige activiteitstijden.",
+        "data": {
+          "lights": "Lampen",
+          "min_initial_delay_minutes": "Minimale beginvertraging",
+          "max_initial_delay_minutes": "Maximale beginvertraging",
+          "min_on_minutes": "Minimale AAN-tijd",
+          "max_on_minutes": "Maximale AAN-tijd",
+          "min_off_minutes": "Minimale UIT-tijd",
+          "max_off_minutes": "Maximale UIT-tijd",
+          "max_simultaneous": "Maximaal aantal gelijktijdige lampen"
+        },
+        "data_description": {
+          "lights": "Selecteer de lampen die Presence Simulator mag bedienen.",
+          "min_initial_delay_minutes": "Minimale vertraging vóór de eerste mogelijke activiteit van elke lamp wanneer het venster opent.",
+          "max_initial_delay_minutes": "Maximale vertraging vóór de eerste mogelijke activiteit van elke lamp wanneer het venster opent.",
+          "min_on_minutes": "Minimale tijd dat een gesimuleerde lamp AAN blijft.",
+          "max_on_minutes": "Maximale tijd dat een gesimuleerde lamp AAN blijft.",
+          "min_off_minutes": "Minimale wachttijd voordat die lamp opnieuw actief kan worden.",
+          "max_off_minutes": "Maximale wachttijd voordat die lamp opnieuw actief kan worden.",
+          "max_simultaneous": "Maximaal aantal gesimuleerde lampen dat tegelijk AAN mag zijn."
+        }
+      }
+    },
+    "error": {
+      "min_on_greater_than_max": "De minimale AAN-tijd mag niet groter zijn dan de maximale AAN-tijd.",
+      "min_off_greater_than_max": "De minimale UIT-tijd mag niet groter zijn dan de maximale UIT-tijd.",
+      "min_initial_delay_greater_than_max": "De minimale beginvertraging mag niet groter zijn dan de maximale.",
+      "no_weekdays_selected": "Selecteer ten minste één weekdag."
+    }
+  }
+}

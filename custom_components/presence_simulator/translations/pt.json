@@ -1,0 +1,92 @@
+{
+  "title": "Presence Simulator",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Presence Simulator",
+        "description": "Configure as luzes utilizadas para a simulação de presença.",
+        "data": {
+          "name": "Nome",
+          "lights": "Luzes"
+        },
+        "data_description": {
+          "lights": "Selecione as luzes que o simulador poderá controlar."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "O Presence Simulator já está configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Janela de atividade",
+        "description": "Escolha como o Presence Simulator determina quando a atividade é permitida.",
+        "data": {
+          "activity_window_mode": "Modo da janela de atividade"
+        }
+      },
+      "fixed": {
+        "title": "Janela de horário fixo",
+        "description": "Configure o período diário em que a simulação de presença pode funcionar.",
+        "data": {
+          "fixed_start_time": "Hora de início",
+          "fixed_end_time": "Hora de fim",
+          "fixed_weekdays": "Dias ativos"
+        },
+        "data_description": {
+          "fixed_start_time": "Hora a partir da qual a atividade simulada pode começar.",
+          "fixed_end_time": "Hora em que a atividade simulada deve terminar. São suportados períodos que atravessam a meia-noite.",
+          "fixed_weekdays": "Selecione os dias em que esta janela de atividade está ativa."
+        }
+      },
+      "sun": {
+        "title": "Janela baseada no sol",
+        "description": "Configure a janela de atividade relativamente ao nascer ou ao pôr do sol.",
+        "data": {
+          "sun_start_event": "Evento de início",
+          "sun_start_offset_minutes": "Desfasamento inicial",
+          "sun_end_event": "Evento de fim",
+          "sun_end_offset_minutes": "Desfasamento final"
+        },
+        "data_description": {
+          "sun_start_event": "Escolha o nascer ou o pôr do sol como referência de início.",
+          "sun_start_offset_minutes": "Desfasamento em minutos. Valores negativos começam antes do evento selecionado.",
+          "sun_end_event": "Escolha o nascer ou o pôr do sol como referência de fim.",
+          "sun_end_offset_minutes": "Desfasamento em minutos. Valores positivos terminam depois do evento selecionado."
+        }
+      },
+      "activity": {
+        "title": "Comportamento da simulação",
+        "description": "Configure as luzes e os tempos aleatórios de atividade.",
+        "data": {
+          "lights": "Luzes",
+          "min_initial_delay_minutes": "Atraso inicial mínimo",
+          "max_initial_delay_minutes": "Atraso inicial máximo",
+          "min_on_minutes": "Tempo ON mínimo",
+          "max_on_minutes": "Tempo ON máximo",
+          "min_off_minutes": "Tempo OFF mínimo",
+          "max_off_minutes": "Tempo OFF máximo",
+          "max_simultaneous": "Máximo de luzes simultâneas"
+        },
+        "data_description": {
+          "lights": "Selecione as luzes que o Presence Simulator poderá controlar.",
+          "min_initial_delay_minutes": "Atraso mínimo antes da primeira atividade possível de cada luz quando a janela abre.",
+          "max_initial_delay_minutes": "Atraso máximo antes da primeira atividade possível de cada luz quando a janela abre.",
+          "min_on_minutes": "Tempo mínimo que uma luz simulada permanece ligada.",
+          "max_on_minutes": "Tempo máximo que uma luz simulada permanece ligada.",
+          "min_off_minutes": "Tempo mínimo de espera antes de essa luz poder voltar a ficar ativa.",
+          "max_off_minutes": "Tempo máximo de espera antes de essa luz poder voltar a ficar ativa.",
+          "max_simultaneous": "Número máximo de luzes simuladas que podem estar ligadas ao mesmo tempo."
+        }
+      }
+    },
+    "error": {
+      "min_on_greater_than_max": "O tempo ON mínimo não pode ser superior ao tempo ON máximo.",
+      "min_off_greater_than_max": "O tempo OFF mínimo não pode ser superior ao tempo OFF máximo.",
+      "min_initial_delay_greater_than_max": "O atraso inicial mínimo não pode ser superior ao máximo.",
+      "no_weekdays_selected": "Selecione pelo menos um dia da semana."
+    }
+  }
+}
