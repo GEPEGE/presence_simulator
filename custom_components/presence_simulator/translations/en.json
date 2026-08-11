@@ -1,0 +1,85 @@
+{
+  "title": "Presence Simulator",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Presence Simulator",
+        "description": "Configure the lights used for presence simulation.",
+        "data": {
+          "name": "Name",
+          "lights": "Lights"
+        },
+        "data_description": {
+          "lights": "Select the lights that may be controlled by the simulator."
+        }
+      }
+    },
+    "abort": {
+      "already_configured": "Presence Simulator is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Presence Simulator settings",
+        "description": "Configure activity windows, timing ranges, and concurrency.",
+        "data": {
+          "activity_window_mode": "Activity window mode",
+          "lights": "Lights",
+          "fixed_start_time": "Fixed start time",
+          "fixed_end_time": "Fixed end time",
+          "fixed_weekdays": "Active weekdays",
+          "sun_start_event": "Sun start event",
+          "sun_start_offset_minutes": "Sun start offset",
+          "sun_end_event": "Sun end event",
+          "sun_end_offset_minutes": "Sun end offset",
+          "min_initial_delay_minutes": "Minimum initial delay",
+          "max_initial_delay_minutes": "Maximum initial delay",
+          "min_on_minutes": "Minimum ON time",
+          "max_on_minutes": "Maximum ON time",
+          "min_off_minutes": "Minimum OFF time",
+          "max_off_minutes": "Maximum OFF time",
+          "max_simultaneous": "Maximum simultaneous lights"
+        },
+        "data_description": {
+          "activity_window_mode": "Choose between a fixed time window or a sun-based window.",
+          "lights": "Select the lights that may be controlled by the simulator.",
+          "fixed_start_time": "Start of the fixed activity window.",
+          "fixed_end_time": "End of the fixed activity window. Overnight ranges are supported.",
+          "fixed_weekdays": "Days on which the fixed activity window is allowed.",
+          "sun_start_event": "Sunrise or sunset used to start the activity window.",
+          "sun_start_offset_minutes": "Offset in minutes relative to the selected start event. Negative values start earlier.",
+          "sun_end_event": "Sunrise or sunset used to end the activity window.",
+          "sun_end_offset_minutes": "Offset in minutes relative to the selected end event. Positive values end later.",
+          "min_initial_delay_minutes": "Minimum delay before each light's first possible activity when a window starts.",
+          "max_initial_delay_minutes": "Maximum delay before each light's first possible activity when a window starts.",
+          "min_on_minutes": "Minimum time a simulated light remains ON.",
+          "max_on_minutes": "Maximum time a simulated light remains ON.",
+          "min_off_minutes": "Minimum waiting time before that light may become active again.",
+          "max_off_minutes": "Maximum waiting time before that light may become active again.",
+          "max_simultaneous": "Maximum number of simulated lights that may be ON at the same time."
+        }
+      }
+    },
+    "error": {
+      "min_on_greater_than_max": "Minimum ON time cannot be greater than maximum ON time.",
+      "min_off_greater_than_max": "Minimum OFF time cannot be greater than maximum OFF time.",
+      "min_initial_delay_greater_than_max": "Minimum initial delay cannot be greater than maximum initial delay.",
+      "no_weekdays_selected": "Select at least one weekday."
+    }
+  },
+  "selector": {
+    "activity_window_mode": {
+      "options": {
+        "fixed": "Fixed time",
+        "sun": "Sun-based"
+      }
+    },
+    "sun_event": {
+      "options": {
+        "sunrise": "Sunrise",
+        "sunset": "Sunset"
+      }
+    }
+  }
+}
