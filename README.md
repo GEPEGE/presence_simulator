@@ -36,9 +36,9 @@ Each selected light operates independently, producing natural overlapping activi
 
 ### HACS
 
-HACS installation will be supported once the integration is published.
+Presence Simulator is available through HACS. Open HACS, search for Presence Simulator, install the integration, and restart Home Assistant.
 
-For development and testing, add this repository as a custom HACS integration repository.
+Then go to Settings → Devices & services → Add integration and search for Presence Simulator.
 
 ### Manual installation
 
@@ -82,4 +82,4 @@ Please keep in mind that this is an independent community project. Use it at you
 
 ## License
 
-License information will be added before the first public release.
+Presence Simulator is open-source software released under the MIT License. See the LICENSE file for details.
